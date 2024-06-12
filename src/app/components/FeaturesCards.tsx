@@ -1,6 +1,6 @@
-import Tools from "../../../images/tools";
+import Tools from "../../../images/Tools";
 import Search from "../../../images/Search";
-import HeartBeat from "../../../images/heartbeat";
+import HeartBeat from "../../../images/HeartBeat";
 
 export default function FeaturesCards(){
   const featureObje = {
