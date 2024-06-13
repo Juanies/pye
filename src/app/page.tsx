@@ -56,7 +56,7 @@ export default async function Home() {
       <div>
         <LoginForm/>
         <h1>{session?.user?.name}</h1>
-        <Image src={session?.user?.image} width={72} height={72}></Image>
+ 
       </div> 
     </main>
   );
