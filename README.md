@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Comenzando con PyE
 
-## Getting Started
+Para aportar tu granito de arena a este proyecto, primero debes asegurarte de que todo funcione correctamente. Aquí tienes una guía paso a paso para poner en marcha el proyecto.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+#### 1. Clonar el Repositorio
+
+Primero, clona el repositorio desde GitHub:
+
+
+```console
+git clone https://github.com/Juanies/pye.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### 2. Configurar Variables de Entorno
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Configura las variables de entorno locales creando un archivo \`.env.development.local\` con el siguiente contenido:
 
-## Learn More
+```env
+POSTGRES_URL=""
+POSTGRES_PRISMA_URL=""
+POSTGRES_URL_NO_SSL=""
+POSTGRES_URL_NON_POOLING=""
+POSTGRES_USER=""
+POSTGRES_HOST=""
+POSTGRES_PASSWORD=""
+POSTGRES_DATABASE=""
+DISCORD_CLIENT_ID=""
+DISCORD_CLIENT_SECRET=""
+AUTH_SECRET=""
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### 3. Crear una Aplicación de Discord
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Crea una aplicación de Discord con la siguiente URL de redirección:
 
-## Deploy on Vercel
+```url
+http://localhost:3000/api/auth/callback/discord
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### 4. Instalar Dependencias
+
+Instala las librerías necesarias para el proyecto utilizando npm:
+
+```console
+npm install
+```
+
+---
+
+#### 5. Iniciar el Servidor
+
+Por último, pero no menos importante, inicia el servidor del proyecto:
+
+```console
+npm run dev
+```
+
+---
+
+
+
+¡Y eso es todo! Ahora deberías tener el proyecto PyE funcionando correctamente en tu entorno local.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details
+
+### ¿Y ahora? Te toca aportar
+
+Si te gustaría contribuir al proyecto, sigue estos pasos:
+
+1. **Fork del Repositorio**: Haz un fork del repositorio `pye` en tu cuenta de GitHub.
+
+2. **Clonar Repositorio**: Clona tu fork del repositorio a tu máquina local usando Git:
+
+   ```bash
+   git clone https://github.com/TuUsuario/pye.git
+
+3. Realizar Cambios: Realiza los cambios y mejoras que desees en tu copia local del proyecto.
+
+
+4. Commit y Push: Sube tus cambios a tu repositorio en GitHub:
+
+
+     ```bash
+    git add .
+    git commit -m "Añadido guía de inicio en Markdown"
+    git push origin main
+
+
+5. Crear Pull Request: Ve a la página de tu repositorio en GitHub y haz clic en el botón "Compare & pull request". Completa la información requerida para describir tu propuesta de cambios y envía el pull request.
+
+6. Esperar Revisión: Espera a que los colaboradores del proyecto revisen tu pull request. Pueden sugerir cambios o aceptar tu contribución directamente.
+
+7. Contribuir a proyectos de código abierto es una excelente manera de mejorar tus habilidades y ayudar a la comunidad. ¡Buena suerte con tu contribución a PyE!
+
+
+
