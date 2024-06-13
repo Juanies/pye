@@ -39,7 +39,7 @@ AUTH_SECRET=""
 
 Crea una aplicación de Discord con la siguiente URL de redirección:
 
-```
+```url
 http://localhost:3000/api/auth/callback/discord
 ```
 
@@ -49,7 +49,7 @@ http://localhost:3000/api/auth/callback/discord
 
 Instala las librerías necesarias para el proyecto utilizando npm:
 
-```bash
+```console
 npm install
 ```
 
@@ -59,7 +59,7 @@ npm install
 
 Por último, pero no menos importante, inicia el servidor del proyecto:
 
-```bash
+```console
 npm run dev
 ```
 
