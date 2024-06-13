@@ -7,9 +7,28 @@ import Arrow from "../../images/Arrow";
 import FeaturesCards from "./components/FeaturesCards";
 import Reputation from '../../images/Reputation';
 import Economy from '../../images/Economy';
+import { get } from 'http';
 
 export default function Home() {
 
+
+  async function getBusiness() {
+    try {
+      const response = await fetch(`/api/gerUser`, {
+        method: "GET",
+      });
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      console.log(data)
+    } catch (error) {
+      console.error('Error fetching business data:', error);
+    }
+  }
+  useEffect(() => {
+    getBusiness();
+  }, []); 
 
 
   return (

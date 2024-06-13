@@ -24,11 +24,9 @@ export default function Menu() {
             </a>
           </li>
         ))}
+
         <li>
-          <a className="text-[#939393] block border border-[#000] px-4 py-[0.3em] rounded-lg" href="/login">Log in</a>
-        </li>
-        <li>
-          <a className="text-[#fff]  px-4 bg-[#0070B9] block py-[0.4em] rounded-lg" href="/sign-up">Sign-up</a>
+          <a className="text-[#fff]  px-4 bg-[#0070B9] block py-[0.4em] rounded-lg" href="/sign-up">Login</a>
         </li>
       </ul>
     </nav>
