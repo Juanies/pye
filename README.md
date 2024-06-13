@@ -8,9 +8,10 @@ Para aportar tu granito de arena a este proyecto, primero debes asegurarte de qu
 
 Primero, clona el repositorio desde GitHub:
 
-\`\`\`bash
+
+```console
 git clone https://github.com/Juanies/pye.git
-\`\`\`
+```
 
 ---
 
@@ -18,7 +19,7 @@ git clone https://github.com/Juanies/pye.git
 
 Configura las variables de entorno locales creando un archivo \`.env.development.local\` con el siguiente contenido:
 
-\`\`\`env
+```env
 POSTGRES_URL=""
 POSTGRES_PRISMA_URL=""
 POSTGRES_URL_NO_SSL=""
@@ -30,7 +31,7 @@ POSTGRES_DATABASE=""
 DISCORD_CLIENT_ID=""
 DISCORD_CLIENT_SECRET=""
 AUTH_SECRET=""
-\`\`\`
+```
 
 ---
 
@@ -38,9 +39,9 @@ AUTH_SECRET=""
 
 Crea una aplicación de Discord con la siguiente URL de redirección:
 
-\`\`\`
+```
 http://localhost:3000/api/auth/callback/discord
-\`\`\`
+```
 
 ---
 
@@ -48,9 +49,9 @@ http://localhost:3000/api/auth/callback/discord
 
 Instala las librerías necesarias para el proyecto utilizando npm:
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ---
 
@@ -58,9 +59,9 @@ npm install
 
 Por último, pero no menos importante, inicia el servidor del proyecto:
 
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 ---
 
