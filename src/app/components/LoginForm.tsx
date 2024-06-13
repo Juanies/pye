@@ -1,4 +1,4 @@
-import { doSocialLogin, doLogout } from "@/app/utils/action"
+import { doSocialLogin, doLogout } from '@/app/utils/action';
 
 const LoginForm = () => {
   return (
