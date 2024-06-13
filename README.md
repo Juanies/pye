@@ -65,5 +65,39 @@ npm run dev
 
 ---
 
+
+
 ¡Y eso es todo! Ahora deberías tener el proyecto PyE funcionando correctamente en tu entorno local.
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details
+
+### ¿Y ahora? Te toca aportar
+
+Si te gustaría contribuir al proyecto, sigue estos pasos:
+
+1. **Fork del Repositorio**: Haz un fork del repositorio `pye` en tu cuenta de GitHub.
+
+2. **Clonar Repositorio**: Clona tu fork del repositorio a tu máquina local usando Git:
+
+   ```bash
+   git clone https://github.com/TuUsuario/pye.git
+
+3. Realizar Cambios: Realiza los cambios y mejoras que desees en tu copia local del proyecto.
+
+
+4. Commit y Push: Sube tus cambios a tu repositorio en GitHub:
+
+
+     ```bash
+    git add .
+    git commit -m "Añadido guía de inicio en Markdown"
+    git push origin main
+
+
+5. Crear Pull Request: Ve a la página de tu repositorio en GitHub y haz clic en el botón "Compare & pull request". Completa la información requerida para describir tu propuesta de cambios y envía el pull request.
+
+6. Esperar Revisión: Espera a que los colaboradores del proyecto revisen tu pull request. Pueden sugerir cambios o aceptar tu contribución directamente.
+
+7. Contribuir a proyectos de código abierto es una excelente manera de mejorar tus habilidades y ayudar a la comunidad. ¡Buena suerte con tu contribución a PyE!
+
+
+
