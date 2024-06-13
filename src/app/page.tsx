@@ -1,4 +1,3 @@
-"use client"
 import { useEffect, useState } from 'react';
 import Image from "next/image";
 import Proton from "../../images/tecno.png";
@@ -8,27 +7,16 @@ import FeaturesCards from "./components/FeaturesCards";
 import Reputation from '../../images/Reputation';
 import Economy from '../../images/Economy';
 import { get } from 'http';
+import { GetServerSideProps } from "next";
+import LoginForm from './components/LoginForm';
+import { auth } from '@/auth/auth';
+import { redirect } from 'next/navigation';
 
-export default function Home() {
 
 
-  async function getBusiness() {
-    try {
-      const response = await fetch(`/api/gerUser`, {
-        method: "GET",
-      });
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const data = await response.json();
-      console.log(data)
-    } catch (error) {
-      console.error('Error fetching business data:', error);
-    }
-  }
-  useEffect(() => {
-    getBusiness();
-  }, []); 
+
+export default async function Home() {
+  const session = await auth();
 
 
   return (
@@ -65,6 +53,13 @@ export default function Home() {
             </div>
           </div>
       </section>
+      <div>
+        <LoginForm/>
+        <h1>{session?.user?.name}</h1>
+        <Image src={session?.user?.image} width={72} height={72}></Image>
+      </div> 
     </main>
   );
 }
+
+
