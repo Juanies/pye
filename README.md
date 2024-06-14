@@ -107,7 +107,8 @@ CREATE TABLE oferta (
    imagen VARCHAR(255),
    usuario VARCHAR(255),
    pago REAL,
-   descripcion VARCHAR(255)
+   descripcion VARCHAR(255),
+   titulo VARCHAR(255)
 );
 
 CREATE TABLE reto (
