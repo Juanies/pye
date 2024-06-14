@@ -102,14 +102,18 @@ Si te gustaría contribuir al proyecto, sigue estos pasos:
 #### Base de datos
 ```SQL
 CREATE TABLE oferta (
-    id SERIAL PRIMARY KEY,
-    iduser INT REFERENCES users(id),
-    imagen VARCHAR(255),
-    usuario VARCHAR(255),
-    pago REAL,
-    descripcion VARCHAR(255)
+   id SERIAL PRIMARY KEY,
+   identify VARCHAR(255),
+   imagen VARCHAR(255),
+   usuario VARCHAR(255),
+   pago REAL,
+   descripcion VARCHAR(255)
 );
 
-
+CREATE TABLE reto (
+   id SERIAL PRIMARY KEY,
+   identify VARCHAR(255),
+   iduser INT REFERENCES usuario(id)
+);
 
 ```
