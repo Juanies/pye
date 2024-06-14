@@ -113,7 +113,7 @@ CREATE TABLE oferta (
 CREATE TABLE reto (
    id SERIAL PRIMARY KEY,
    identify VARCHAR(255),
-   iduser INT REFERENCES usuario(id)
+   
 );
 
 ```
