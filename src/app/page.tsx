@@ -16,7 +16,7 @@ import { redirect } from 'next/navigation';
 
 
 export default async function Home() {
-  const session = await auth();
+ // const session = await auth();
 
 
   return (
@@ -53,11 +53,13 @@ export default async function Home() {
             </div>
           </div>
       </section>
+      {/*
       <div>
         <LoginForm/>
         <h1>{session?.user?.name}</h1>
         <Image src={session?.user?.image} width={72} height={72}></Image>
       </div> 
+      */}
     </main>
   );
 }

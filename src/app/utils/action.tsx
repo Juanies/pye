@@ -8,6 +8,7 @@ export async function doSocialLogin(formData: { get: (arg0: string) => any; }) {
     await signIn(action);
     redirect("/");
 }
+
 export async function doLogout() {
     await signOut({ redirectTo: "/" });
 }
