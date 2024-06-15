@@ -99,5 +99,22 @@ Si te gustaría contribuir al proyecto, sigue estos pasos:
 
 7. Contribuir a proyectos de código abierto es una excelente manera de mejorar tus habilidades y ayudar a la comunidad. ¡Buena suerte con tu contribución a PyE!
 
+#### Base de datos
+```SQL
+CREATE TABLE oferta (
+   id SERIAL PRIMARY KEY,
+   identify VARCHAR(255),
+   imagen VARCHAR(255),
+   usuario VARCHAR(255),
+   pago REAL,
+   descripcion VARCHAR(255),
+   titulo VARCHAR(255)
+);
 
+CREATE TABLE reto (
+   id SERIAL PRIMARY KEY,
+   identify VARCHAR(255),
+   
+);
 
+```
