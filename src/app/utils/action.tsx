@@ -1,14 +1,22 @@
 'use server'
 
+import { auth } from '@/auth/auth';
 import { signIn, signOut } from "@/auth/auth";
 import { redirect } from 'next/navigation';
 
 export async function doSocialLogin(formData: { get: (arg0: string) => any; }) {
     const action = formData.get('action');
     await signIn(action);
+
     redirect("/");
 }
 
 export async function doLogout() {
     await signOut({ redirectTo: "/" });
+}
+
+
+export async function isLogged() {
+    const session = await auth();
+    return session ? true : false
 }

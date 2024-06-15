@@ -1,23 +1,17 @@
-import { useEffect, useState } from 'react';
 import Image from "next/image";
-import Proton from "../../images/tecno.png";
-import HyperLink from "./components/HyperLink";
 import Arrow from "../../images/Arrow";
-import FeaturesCards from "./components/FeaturesCards";
-import Reputation from '../../images/Reputation';
 import Economy from '../../images/Economy';
-import { get } from 'http';
-import { GetServerSideProps } from "next";
-import LoginForm from './components/LoginForm';
-import { auth } from '@/auth/auth';
-import { redirect } from 'next/navigation';
+import Reputation from '../../images/Reputation';
+import Proton from "../../images/tecno.png";
+import FeaturesCards from "./components/FeaturesCards";
+import HyperLink from "./components/HyperLink";
 
 
 
 
 export default async function Home() {
- // const session = await auth();
 
+  
 
   return (
     <main className="flex min-h-screen mx-auto container mt-14 flex-col lg:max-w-6xl md:max-w-2xl items-center justify-between ">
