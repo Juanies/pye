@@ -29,6 +29,7 @@ export async function POST(request: { json: () => PromiseLike<{ money: any; jobT
             throw new Error("Usuario no autenticado");
         }
 
+        console.log(session)
         const { money, jobTitle, jobDescription } = await request.json();
 
         if (!money || isNaN(money)) {
@@ -44,9 +45,10 @@ export async function POST(request: { json: () => PromiseLike<{ money: any; jobT
         const userInfo = await getCurrentAuthorizationInfo(session.user.accessToken);
 
         console.log(userInfo)
+        console.log(userInfo.user.username)
         await sql`
-            INSERT INTO oferta (imagen, usuario, pago, descripcion, titulo)
-            VALUES (${session.user.image}, ${session.user.name}, ${money}, ${jobDescription}, ${jobTitle})
+            INSERT INTO oferta (identify, imagen, usuario, pago, descripcion, titulo)
+            VALUES ( ${userInfo.user.id} , ${session.user.image}, ${userInfo.user.username}, ${money}, ${jobDescription}, ${jobTitle})
         `;
 
         return NextResponse.json({ success: true });

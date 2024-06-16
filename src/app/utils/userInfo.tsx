@@ -14,7 +14,7 @@ export async function getSessionData() {
 export async function getUserName() {
   const session = await auth();
   if (session) {
-    console.log(session?.user?.name)
+    console.log(session )
     return session?.user?.name;
 
   }
