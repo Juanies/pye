@@ -50,3 +50,15 @@ export async function getUserImage() {
   }
 }
 
+export async function getUsserSesion() {
+  try {
+    const userData = await auth();
+    return userData;
+  } catch (error) {
+    console.error("Error fetching user image:", error);
+    return null;
+  }
+}
+
+
+
