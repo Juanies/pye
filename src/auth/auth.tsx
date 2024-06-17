@@ -22,7 +22,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         token.accessToken = account.access_token;
       }
       if (profile) {
-        token.name = profile.name; 
+        token.name = profile.nickname; 
         token.email = profile.email;
       }
       return token;

@@ -1,31 +1,52 @@
-"use server"
+"use server";
 import { auth } from "@/auth/auth";
 
-export async function getSessionData() {
+export async function getAllUserData() {
+    try {
+        const session = await auth();
+        if (!session) {
+            throw new Error("No session found");
+        }
+
+        const accessToken = session.user.accessToken;  
+        const response = await fetch("https://discord.com/api/oauth2/@me", {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`Error retrieving current authorization information: ${response.status} ${response.statusText}`);
+        }
+
+        const userInfo = await response.json();
+        return { userInfo };
+    } catch (error) {
+        console.error('Error retrieving authorization information:', error);
+        throw error;
+    }
+}
+
+
+export async function getUserName() {
   try {
-    const session = await auth();
-    return session;
+    const userData = await getAllUserData();
+    console.log(userData.userInfo.user.username)
+    return userData.userInfo.user.username;
+    
   } catch (error) {
-    console.error("Error fetching session data:", error);
+    console.error("Error fetching user name:", error);
     return null;
   }
 }
 
-export async function getUserName() {
-  const session = await auth();
-  if (session) {
-    console.log(session )
-    return session?.user?.name;
-
-  }
-  return null;
-}
-
 export async function getUserImage() {
-  const session = await auth();
-  if (session) {
-    return session?.user?.image;
+  try {
+    const userData = await auth();
+    return userData?.user.image;
+  } catch (error) {
+    console.error("Error fetching user image:", error);
+    return null;
   }
-  return null;
 }
 
