@@ -2,7 +2,6 @@
 import Logo from "./Logo";
 import Menu from "@/app/components/Menu"
 import { auth } from '@/auth/auth';
-import { isLogged } from "../utils/action";
 import { useState, useEffect } from "react";
 
 export default function Header() {
