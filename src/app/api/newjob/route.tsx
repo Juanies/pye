@@ -1,18 +1,16 @@
 import { sql } from '@vercel/postgres';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { auth } from '@/auth/auth';
 import { getUserID, getUserName } from '@/app/utils/userInfo';
 
-
-
-export async function POST(request: { json: () => PromiseLike<{ money: any; jobTitle: any; jobDescription: any; }> | { money: any; jobTitle: any; jobDescription: any; }; }) {
+export async function POST(request: NextRequest) {
     try {
         const session = await auth(); 
         if (!session || !session.user || !session.user.accessToken) {
             throw new Error("Usuario no autenticado");
         }
 
-        console.log(session)
+        console.log(session);
         const { money, jobTitle, jobDescription } = await request.json();
 
         if (!money || isNaN(money)) {
@@ -26,12 +24,11 @@ export async function POST(request: { json: () => PromiseLike<{ money: any; jobT
         }
 
         const username = await getUserName();
-
         const userid = await getUserID();
 
         await sql`
             INSERT INTO oferta (identify, imagen, usuario, pago, descripcion, titulo)
-            VALUES ( ${userid} , ${session.user.image}, ${username}, ${money}, ${jobDescription}, ${jobTitle})
+            VALUES (${userid}, ${session.user.image}, ${username}, ${money}, ${jobDescription}, ${jobTitle})
         `;
 
         return NextResponse.json({ success: true });
