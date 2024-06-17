@@ -62,3 +62,15 @@ export async function getUsserSesion() {
 
 
 
+export async function getUserID() {
+  try {
+    const userData = await getAllUserData();
+    console.log(userData.userInfo.user.id)
+    return userData.userInfo.user.id;
+    
+  } catch (error) {
+    console.error("Error fetching user name:", error);
+    return null;
+  }
+}
+

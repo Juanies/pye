@@ -1,26 +1,9 @@
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
 import { auth } from '@/auth/auth';
+import { getUserID, getUserName } from '@/app/utils/userInfo';
 
-async function getCurrentAuthorizationInfo(accessToken: string) {
-    try {
-        const response = await fetch('https://discord.com/api/oauth2/@me', {
-            headers: {
-                Authorization: `Bearer ${accessToken}`
-            }
-        });
 
-        if (!response.ok) {
-            throw new Error(`Error retrieving current authorization information: ${response.status} ${response.statusText}`);
-        }
-
-        const userInfo = await response.json();
-        return userInfo;
-    } catch (error) {
-        console.error('Error retrieving authorization information:', error);
-        throw error;
-    }
-}
 
 export async function POST(request: { json: () => PromiseLike<{ money: any; jobTitle: any; jobDescription: any; }> | { money: any; jobTitle: any; jobDescription: any; }; }) {
     try {
@@ -42,13 +25,13 @@ export async function POST(request: { json: () => PromiseLike<{ money: any; jobT
             throw new Error("La descripción del trabajo es obligatoria");
         }
 
-        const userInfo = await getCurrentAuthorizationInfo(session.user.accessToken);
+        const username = await getUserName();
 
-        console.log(userInfo)
-        console.log(userInfo.user.username)
+        const userid = await getUserID();
+
         await sql`
             INSERT INTO oferta (identify, imagen, usuario, pago, descripcion, titulo)
-            VALUES ( ${userInfo.user.id} , ${session.user.image}, ${userInfo.user.username}, ${money}, ${jobDescription}, ${jobTitle})
+            VALUES ( ${userid} , ${session.user.image}, ${username}, ${money}, ${jobDescription}, ${jobTitle})
         `;
 
         return NextResponse.json({ success: true });
