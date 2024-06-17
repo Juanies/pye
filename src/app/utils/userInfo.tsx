@@ -52,14 +52,13 @@ export async function getUserImage() {
 
 export async function getUsserSesion() {
   try {
-    const userData = await auth();
-    return userData;
+    const userData = await auth(); 
+    return userData ? JSON.stringify(userData) : null;
   } catch (error) {
-    console.error("Error fetching user image:", error);
+    console.error("Error fetching user session:", error);
     return null;
   }
 }
-
 
 
 export async function getUserID() {

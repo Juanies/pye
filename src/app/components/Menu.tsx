@@ -9,7 +9,7 @@ export default function Menu() {
   const pathName = usePathname();
 
   const [user, setUser] = useState<string>("");
-  const [session, setSession] = useState<string>("");
+  const [session, setSession] = useState<string | null>(null);
   const [triggerFetch, setTriggerFetch] = useState<boolean>(false);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function Menu() {
 
   function clear() {
     setUser("");
-    setSession("");
+    setSession(null);
   }
 
   const menu = [
