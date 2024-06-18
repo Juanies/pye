@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
         console.log(session);
         const { money, jobTitle, jobDescription } = await request.json();
 
-        if (!money || isNaN(money)) {
+        if (!money) {
             throw new Error("Cantidad de dinero inválida");
         }
         if (!jobTitle) {

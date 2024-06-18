@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { auth } from '@/auth/auth';
 
 export default function NewJobForm() {
-  const [money, setMoney] = useState<number>(0);
+  const [money, setMoney] = useState<string>('');
   const [jobTitle, setJobTitle] = useState<string>('');
   const [jobDescription, setJobDescription] = useState<string>('');
 
@@ -32,7 +32,7 @@ export default function NewJobForm() {
 
       alert('Job created successfully!');
 
-      setMoney(0);
+      setMoney('');
       setJobTitle('');
       setJobDescription('');
     } catch (error) {
@@ -55,8 +55,7 @@ export default function NewJobForm() {
           className="border rounded p-2"
           type="text"
           placeholder="Pago"
-          value={money === 0 ? '' : money.toString()} // Convert number to string for input value
-          onChange={(e) => setMoney(Number(e.target.value))}
+          onChange={(e) => setMoney(e.target.value)}
         />
       </div>
       <div>
