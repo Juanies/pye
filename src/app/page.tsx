@@ -5,6 +5,7 @@ import Reputation from '../../images/Reputation';
 import Proton from "../../images/tecno.png";
 import FeaturesCards from "./components/FeaturesCards";
 import HyperLink from "./components/HyperLink";
+import SectionCardsJob from "./components/SectionCardsJob";
 
 
 
@@ -47,13 +48,12 @@ export default async function Home() {
             </div>
           </div>
       </section>
-      {/*
-      <div>
-        <LoginForm/>
-        <h1>{session?.user?.name}</h1>
- 
-      </div> 
-      */}
+      <section>
+              <h2 className='font-semibold   text-[2.5rem] '>
+                <span className='text-[#0070B9]'>Ofertas de empleo</span>
+              </h2>
+        <SectionCardsJob limits={3} pages={false}/>
+      </section>
     </main>
   );
 }

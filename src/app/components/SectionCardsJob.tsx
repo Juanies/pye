@@ -10,12 +10,17 @@ pago: string;
 descripcion: string;
 }
 
-const SectionCardsJob = () => {
+interface Props {
+  limits?: number;
+  pages?: boolean;
+}
+
+export default function SectionCardsJob({ limits, pages } : Props)  {
   const [jobs, setJobs] = useState([]);
   const [page, setPage] = useState(1);
   const [error, setError] = useState("");
-  const limit = 6;
-
+   const limit = limits ?? 6;
+   const pageornot = pages ?? true;
   useEffect(() => {
     const fetchJobs = async () => {
       try {
@@ -26,7 +31,7 @@ const SectionCardsJob = () => {
         const data = await res.json();
         setJobs(data.rows);
       } catch (error) {
-        setError(error);
+        console.log(error);
       }
     };
 
@@ -49,16 +54,14 @@ const SectionCardsJob = () => {
               />
         ))}
       </div>
-      <div>
+      {pageornot && (
+        <div>
         <button onClick={() => setPage(prev => Math.max(prev - 1, 1))}>Previous</button>
         <button onClick={() => setPage(prev => prev + 1)}>Next</button>
       </div>
+      )}
     </div>
   );
 };
 
-export default SectionCardsJob;
-function fetchJobs() {
-  throw new Error('Function not implemented.');
-}
 
