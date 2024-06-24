@@ -117,4 +117,6 @@ CREATE TABLE oferta (
 
 #### Diseño
 
+ Diseño inicial sujeto a cambios
+
 https://www.figma.com/design/s5iYohk3tpcjxJI6v6p8ZM/Untitled?node-id=207-221&t=KVvhQKsAZXksBTmV-1
