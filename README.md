@@ -106,15 +106,10 @@ CREATE TABLE oferta (
    identify VARCHAR(255),
    imagen VARCHAR(255),
    usuario VARCHAR(255),
-   pago REAL,
-   descripcion VARCHAR(255),
+   pago VARCHAR(255),
+   descripcion TEXT,
    titulo VARCHAR(255)
 );
 
-CREATE TABLE reto (
-   id SERIAL PRIMARY KEY,
-   identify VARCHAR(255),
-   
-);
 
 ```
