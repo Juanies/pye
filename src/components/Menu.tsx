@@ -42,7 +42,7 @@ export default function Menu() {
 
   return (
     <nav className="h-auto text-[1rem]">
-      <ul className="flex items-center space-x-4">
+      <ul className="flex gap-8 items-center">
         {menu.map((item, index) => (
           <li key={index}>
             <Link
@@ -61,7 +61,7 @@ export default function Menu() {
                   e.preventDefault();
                   handleLogout();
                 }}
-                className="text-[#fff] px-4 bg-[#0070B9] block py-[0.4em] rounded-lg"
+                className="text-[#fff] px-4 bg-[#0070B9] block py-2 rounded-lg"
                 href="/sign-up"
               >
                 Log out
@@ -75,7 +75,7 @@ export default function Menu() {
           <li>
             <Link
               href="/login"
-              className="text-[#fff] px-4 bg-[#0070B9] block py-[0.4em] rounded-lg"
+              className="text-[#fff] px-4 bg-[#0070B9] block py-2 rounded-lg"
               onClick={() => setTriggerFetch(!triggerFetch)}
             >
               Login
