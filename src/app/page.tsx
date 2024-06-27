@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Arrow from "../../images/Arrow";
-import Economy from '../../images/Economy';
-import Reputation from '../../images/Reputation';
-import Proton from "../../images/tecno.png";
-import FeaturesCards from "./components/FeaturesCards";
-import HyperLink from "./components/HyperLink";
-import SectionCardsJob from "./components/SectionCardsJob";
+import Arrow from "@/images/Arrow";
+import Economy from '@/images/Economy';
+import Reputation from '@/images/Reputation';
+import Proton from "@/images/tecno.png";
+import FeaturesCards from "@/components/FeaturesCards";
+import HyperLink from "@/components/HyperLink";
+import SectionCardsJob from "@/components/SectionCardsJob";
 
 
 

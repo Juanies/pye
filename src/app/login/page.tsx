@@ -1,5 +1,5 @@
-import Computer from "../../../images/Computer";
-import LoginForm from "../components/LoginForm";
+import Computer from "@/images/Computer";
+import LoginForm from "@/components/LoginForm";
 
 export default function Login(){
   return(

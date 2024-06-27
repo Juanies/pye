@@ -1,7 +1,7 @@
 import { sql } from '@vercel/postgres';
 import { NextRequest, NextResponse } from 'next/server';
 import { auth } from '@/auth/auth';
-import { getUserID, getUserName } from '@/app/utils/userInfo';
+import { getUserID, getUserName } from '@/utils/userInfo';
 
 export async function POST(request: NextRequest) {
     try {

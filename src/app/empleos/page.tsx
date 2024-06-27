@@ -1,8 +1,8 @@
 "use client"
 import { useState } from "react";
-import NewJobForm from "../components/NewJobForm";
-import SearchBar from "../components/SearchBar";
-import SectionCardsJob from "../components/SectionCardsJob";
+import NewJobForm from "@/components/NewJobForm";
+import SearchBar from "@/components/SearchBar";
+import SectionCardsJob from "@/components/SectionCardsJob";
 
 export default function Jobs(){
 
