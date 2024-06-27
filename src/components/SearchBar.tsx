@@ -1,8 +1,8 @@
 // components/SearchBar.tsx
 
 import React from 'react';
-import SearchInput from '../../../images/SearchInput';
-import Plus from '../../../images/Plus';
+import SearchInput from '@/images/SearchInput';
+import Plus from '@/images/Plus';
 
 interface SearchBarProps {
   showPlusIcon: boolean;
