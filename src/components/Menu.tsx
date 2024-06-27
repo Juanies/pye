@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { getUserImage, getUsserSesion } from "@/utils/userInfo";
 import { doLogout } from "@/utils/action";
+import Link from "next/link";
 
 export default function Menu() {
   const pathName = usePathname();
@@ -44,18 +45,18 @@ export default function Menu() {
       <ul className="flex items-center space-x-4">
         {menu.map((item, index) => (
           <li key={index}>
-            <a
+            <Link
               href={item.link}
               className={`${pathName === item.link ? "font-bold text-[#0070B9]" : ""}`}
             >
               {item.name}
-            </a>
+            </Link>
           </li>
         ))}
         {session ? (
           <>
             <li>
-              <a
+              <Link
                 onClick={(e) => {
                   e.preventDefault();
                   handleLogout();
@@ -64,7 +65,7 @@ export default function Menu() {
                 href="/sign-up"
               >
                 Log out
-              </a>
+              </Link>
             </li>
             <li>
               <Image src={user} alt="User Avatar" width={42} height={42} />
@@ -72,13 +73,13 @@ export default function Menu() {
           </>
         ) : (
           <li>
-            <a
+            <Link
               href="/login"
               className="text-[#fff] px-4 bg-[#0070B9] block py-[0.4em] rounded-lg"
               onClick={() => setTriggerFetch(!triggerFetch)}
             >
               Login
-            </a>
+            </Link>
           </li>
         )}
       </ul>
