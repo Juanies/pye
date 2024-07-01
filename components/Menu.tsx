@@ -2,8 +2,8 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { getUserImage, getUsserSesion } from "@/utils/userInfo";
-import { doLogout } from "@/utils/action";
+import { getUserImage, getUsserSesion } from "@/src/utils/userInfo";
+import { doLogout } from "@/src/utils/action";
 import Link from "next/link";
 
 export default function Menu() {

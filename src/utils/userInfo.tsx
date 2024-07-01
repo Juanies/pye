@@ -1,5 +1,5 @@
 "use server";
-import { auth } from "@/auth/auth";
+import { auth } from "@/src/auth/auth";
 
 export async function getAllUserData() {
     try {

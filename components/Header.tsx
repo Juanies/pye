@@ -1,7 +1,7 @@
 "use client"
 import Logo from "./Logo";
 import Menu from "@/components/Menu"
-import { auth } from '@/auth/auth';
+import { auth } from '@/src/auth/auth';
 import { useState, useEffect } from "react";
 import Link from "next/link";
 

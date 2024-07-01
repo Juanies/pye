@@ -1,4 +1,4 @@
-import Plus from "@/images/Plus"
+import Plus from "@/src/images/Plus"
 export default function AddJobButton(){
   return(
     <div>

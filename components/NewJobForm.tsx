@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from "react";
-import { auth } from '@/auth/auth';
+import { auth } from '@/src/auth/auth';
 
 export default function NewJobForm() {
   const [money, setMoney] = useState<string>('');

@@ -1,7 +1,7 @@
 'use server'
 
-import { auth } from '@/auth/auth';
-import { signIn, signOut } from "@/auth/auth";
+import { auth } from '@/src/auth/auth';
+import { signIn, signOut } from "@/src/auth/auth";
 import { redirect } from 'next/navigation';
 
 export async function doSocialLogin(formData: { get: (arg0: string) => any; }) {
