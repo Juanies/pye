@@ -1,6 +1,6 @@
 "use client"
-import React, { useState, useEffect } from 'react';
-import JobCard from './JobCard';
+import JobCard from '@/components/elements/JobCard';
+import { useEffect, useState } from 'react';
 
 interface Job {
   id: number;
@@ -39,19 +39,22 @@ export default function SectionCardsJob({ limits, pages }: Props) {
     fetchJobs();
   }, [page, limit, pageOrNot]);
 
+  const JobsList = jobs.map((job) => (
+      <JobCard
+        key={job.id}
+        imageUrl={job.imagen}
+        username={job.usuario}
+        price={job.pago}
+        description={job.descripcion}
+      />
+    ));
+
+
   return (
     <div className='mt-10'>
       {error && <p className="text-red-500">{error}</p>}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {jobs.map(job => (
-          <JobCard
-            key={job.id}
-            imageUrl={job.imagen}
-            username={job.usuario}
-            price={job.pago}
-            description={job.descripcion}
-          />
-        ))}
+        {JobsList}
       </div>
       {pageOrNot && (
         <div>

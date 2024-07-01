@@ -1,4 +1,3 @@
-// components/SearchBar.tsx
 
 import React from 'react';
 import SearchInput from '@/src/images/SearchInput';

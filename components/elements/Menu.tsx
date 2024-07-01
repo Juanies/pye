@@ -40,19 +40,21 @@ export default function Menu() {
     { name: "Retos", link: "/retos" },
   ];
 
+    const MenuList = menu.map((item, index) => (
+      <li key={index}>
+        <Link
+          href={item.link}
+          className={`${pathName === item.link ? "font-bold text-[#0070B9]" : ""}`}
+        >
+          {item.name}
+        </Link>
+      </li>
+    ));
+
   return (
     <nav className="h-auto text-[1rem]">
       <ul className="flex gap-8 items-center">
-        {menu.map((item, index) => (
-          <li key={index}>
-            <Link
-              href={item.link}
-              className={`${pathName === item.link ? "font-bold text-[#0070B9]" : ""}`}
-            >
-              {item.name}
-            </Link>
-          </li>
-        ))}
+        {MenuList}
         {session ? (
           <>
             <li>
