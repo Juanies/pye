@@ -3,9 +3,9 @@ import Arrow from "@/src/images/Arrow";
 import Economy from '@/src/images/Economy';
 import Reputation from '@/src/images/Reputation';
 import Proton from "@/src/images/tecno.png";
-import FeaturesCards from "@/components/FeaturesCards";
-import HyperLink from "@/components/HyperLink";
-import SectionCardsJob from "@/components/SectionCardsJob";
+import FeaturesCards from "@/components/elements/FeaturesCards";
+import HyperLink from "@/components/elements/HyperLink";
+import SectionCardsJob from "@/components/elements/SectionCardsJob";
 
 export default async function HomePage() {
   return (

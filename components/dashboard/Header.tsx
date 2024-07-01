@@ -1,8 +1,6 @@
 "use client"
-import Logo from "./Logo";
-import Menu from "@/components/Menu"
-import { auth } from '@/src/auth/auth';
-import { useState, useEffect } from "react";
+import Logo from "@/src/images/Logo";
+import Menu from "@/components/elements/Menu"
 import Link from "next/link";
 
 export default function Header() {
