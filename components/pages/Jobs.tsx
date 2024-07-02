@@ -9,7 +9,6 @@ export default function Jobs(){
   
   const handleClick = () =>  {
       setActive(!active)
-      console.log(active);
     }
 
 return (

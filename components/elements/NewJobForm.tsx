@@ -4,6 +4,7 @@ import { createJob } from "@/src/app/lib/actions";
 export default function NewJobForm() {
 
 
+  // Create job  form -- action createJob
   return (
     <form className="mt-12 flex flex-col gap-2" action={createJob}>
       <div className="flex gap-2">
